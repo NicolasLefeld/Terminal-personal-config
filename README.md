@@ -23,6 +23,9 @@ In order to install and setup ZSH and Oh-My-Zsh on Ubuntu 20.04, there are a few
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 ```
 
 2. Then run this command
@@ -31,7 +34,7 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 
 3. Locate the ZSH_THEME and change it to
 
-> ZSH_THEME="agnoster"
+> ZSH_THEME="powerlevel10k/powerlevel10k"
 
 4. Locate the plugins and change it to
 
@@ -40,3 +43,9 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 5. Under plugins add
 
 > autoload -U compinit && compinit
+
+# Powerlevel10k Setup
+
+1. Run the command bellow and configure the powerlevel10k theme to your like!
+
+> p10k configure
