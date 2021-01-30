@@ -1,28 +1,42 @@
-# Install [Zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+# Prerequisites
+In order to install and setup ZSH and Oh-My-Zsh on Ubuntu 20.04, there are a few tools we will need. These include wget, curl and git. They can be installed by running the command below
 
-1. There are two main ways to install Zsh
-* with the package manager of your choice, e.g. sudo apt install zsh (see below for more examples)
-* from source, following instructions from the Zsh FAQ
-2. Verify installation by running zsh --version. Expected result: zsh 5.4.2 or more recent.
-3. Make it your default shell: chsh -s $(which zsh)
-* Note that this will not work if Zsh is not in your authorized shells list (/etc/shells) or if you don't have permission to use chsh. If that's the case you'll need to use a different procedure.
-4. Log out and log back in again to use your new default shell.
-5. Test that it worked with echo $SHELL. Expected result: /bin/zsh or similar.
-6. Test with $SHELL --version. Expected result: 'zsh 5.4.2' or similar
+> apt install wget curl git -y
 
-# Install [Spaceship](https://github.com/denysdovhan/spaceship-prompt) theme
+# Instalation
+1. Install zsh
 
-1. Clone this repo:
+> apt install zsh
+
+2. Change the default terminal to zsh
+
+> chsh -s $(which zsh)
+
+3. Install Oh-my-Zsh 
+
+> sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Setup
+1. Clone this 2 repos, they contain the plugins
 
 ```
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 ```
 
-2. Symlink spaceship.zsh-theme to your oh-my-zsh custom themes directory:
+2. Then run this command
 
-```
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme" 
-```
+> nano ~/.zshrc
 
-Set ZSH_THEME="spaceship" in your .zshrc.
+3. Locate the ZSH_THEME and change it to
 
+> ZSH_THEME="agnoster"
+
+4. Locate the plugins and change it to
+
+> plugins=(git zsh-autosuggestions zsh-completions)
+
+5. Under plugins add
+
+> autoload -U compinit && compinit
