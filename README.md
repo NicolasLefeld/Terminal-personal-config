@@ -1,9 +1,12 @@
-# Prerequisites
+# With this guide, you will install
+_ZSH + OhMyZsh with PowerLevel10k theme and autosuggestions+completions_
+
+## Prerequisites
 In order to install and setup ZSH and Oh-My-Zsh on Ubuntu 20.04, there are a few tools we will need. These include wget, curl and git. They can be installed by running the command below
 
 > apt install wget curl git -y
 
-# Instalation
+## Instalation
 1. Install zsh
 
 > apt install zsh
@@ -16,7 +19,7 @@ In order to install and setup ZSH and Oh-My-Zsh on Ubuntu 20.04, there are a few
 
 > sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# Setup
+## Setup
 1. Clone this 2 repos, they contain the plugins
 
 ```
@@ -44,8 +47,10 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 > autoload -U compinit && compinit
 
-# Powerlevel10k Setup
+## Powerlevel10k Setup
 
 1. Run the command bellow and configure the powerlevel10k theme to your like!
 
 > p10k configure
+
+Follow all the steps and you are done!
